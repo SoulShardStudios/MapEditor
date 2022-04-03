@@ -6,16 +6,25 @@ public class OrthoSimpleCameraController : MonoBehaviour
     {
         transform.position += speed * (Vector3)GetMovementVector() * Time.deltaTime;
     }
+
+    bool GetKeys(KeyCode[] codes)
+    {
+        foreach (KeyCode c in codes)
+            if (Input.GetKey(c))
+                return true;
+        return false;
+    }
+
     Vector2 GetMovementVector()
     {
         Vector2 res = Vector2.zero;
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (GetKeys(new KeyCode[2] { KeyCode.LeftArrow, KeyCode.D }))
             res.x -= 1;
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (GetKeys(new KeyCode[2] { KeyCode.RightArrow, KeyCode.A }))
             res.x += 1;
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (GetKeys(new KeyCode[2] { KeyCode.DownArrow, KeyCode.S }))
             res.y -= 1;
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (GetKeys(new KeyCode[2] { KeyCode.UpArrow, KeyCode.W }))
             res.y += 1;
         return res;
     }

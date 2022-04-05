@@ -11,6 +11,7 @@ public class FillTool : Brush
         if (Input.GetMouseButtonDown(0))
             FillArea(mouseOffset, color, 10000);
     }
+
     async void FillArea(Vector2Int position, Color color, int maxPixelChange)
     {
         var Main = _manager.GetPixelMap("Main");

@@ -17,10 +17,24 @@ public class ToolManager : MonoBehaviour
             button.toolName = tool_uis[i].name;
             button.onclick = 
                 (string s) => 
-                { 
-                    DeselectAll(); 
-                    button.SetSelected(true); 
+                {
+                    setSelect(button, s);
                 };
+        }
+    }
+
+    void setSelect(ToolSelectButton b, string name)
+    {
+        if (_current == name)
+        {
+            _current = null;
+            b.SetSelected(false);
+        }
+        else
+        {
+            DeselectAll();
+            b.SetSelected(true);
+            _current = name;
         }
     }
 

@@ -36,7 +36,7 @@ public partial class MapSaveManager: MonoBehaviour
     }
     void InitMapPaths(string levelPath = "")
     {
-        string levelSaveLocation = levelPath == "" ? $"{Constants.LevelSaveFilePath}/{_levelName}" : levelPath;
+        string levelSaveLocation = levelPath == "" ? $"{""}/{_levelName}" : levelPath;
         foreach (PixelMapSaver s in _savers)
             if (s != null)
                 s.saveLocation = $"{levelSaveLocation}/{s.gameObject.name}";

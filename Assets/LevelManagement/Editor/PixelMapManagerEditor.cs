@@ -13,6 +13,6 @@ public class LevelSaveManagerEditor : Editor
         if (GUILayout.Button("LoadCurrentMapData"))
             manager.Load();
         if (GUILayout.Button("OpenLevelsFolder"))
-            ExplorerUtility.OpenFileExplorerAtPath(Constants.LevelSaveFilePath);
+            ExplorerUtility.OpenFileExplorerAtPath("");
     }
 }

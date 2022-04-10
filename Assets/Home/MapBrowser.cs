@@ -14,6 +14,8 @@ public class MapBrowser : MonoBehaviour
             currentMaps.Add((name, RenderWorkspace(name)));
     }
 
+    public void OpenWorkspacesFolder() => ExplorerUtility.OpenFileExplorerAtPath(_mapsFolder);
+
     int GetMapIndex(string name)
     {
         int index = -1;

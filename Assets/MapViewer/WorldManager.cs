@@ -1,10 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using SoulShard.PixelMaps;
+using System.Collections.Generic;
 public class WorldManager : MonoBehaviour
 {
-    PixelMap _currently_editing_map;
+    public static WorldManager Instance { get; private set; }
+
+    Dictionary<string,List<PixelMap>> maps;
     [SerializeField] GameObject pixelMap;
     [SerializeField] uint universalChunkSize, startingPPU;
+    
 }

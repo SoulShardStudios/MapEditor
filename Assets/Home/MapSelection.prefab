@@ -98,6 +98,9 @@ MonoBehaviour:
   path: 
   _name: 
   description: 
+  _editScene: Editor
+  _viewScene: Viewer
+  _currentScene: Home
 --- !u!1 &6474044826994080739
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +182,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6474044826994080741}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3659764743356391668}
+        m_TargetAssemblyTypeName: MapSelection, Assembly-CSharp
+        m_MethodName: OpenToEdit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &6474044826994080742
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -299,7 +314,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6474044827154881110}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3659764743356391668}
+        m_TargetAssemblyTypeName: MapSelection, Assembly-CSharp
+        m_MethodName: OpenToView
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &6474044827154881111
 CanvasRenderer:
   m_ObjectHideFlags: 0

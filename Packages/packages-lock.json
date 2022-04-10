@@ -8,21 +8,22 @@
       "hash": "c5bd85b033ee9994cf7b4d711479e2602d42c639"
     },
     "com.soulshardstudios.soulshardutilities": {
-      "version": "file:SoulShardUtilities",
+      "version": "https://github.com/SoulShardStudos/SoulShardUtilities.git#main",
       "depth": 0,
-      "source": "embedded",
+      "source": "git",
       "dependencies": {
         "com.unity.collections": "1.0.0-pre.6",
         "com.unity.burst": "1.5.6",
         "com.unity.jobs": "0.11.0-preview.6"
-      }
+      },
+      "hash": "90e0e4e13fdcebc5d6e05fc537836763a760253c"
     },
     "com.unity.2d.animation": {
-      "version": "5.0.6",
+      "version": "5.0.10",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "4.0.3",
+        "com.unity.2d.common": "4.0.4",
         "com.unity.mathematics": "1.1.0",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
@@ -31,7 +32,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.common": {
-      "version": "4.0.3",
+      "version": "4.0.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -52,17 +53,6 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.psdimporter": {
-      "version": "4.1.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "4.0.3",
-        "com.unity.2d.animation": "5.0.6",
-        "com.unity.2d.sprite": "1.0.0"
-      },
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.sprite": {
@@ -134,7 +124,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.9",
+      "version": "2.0.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -143,7 +133,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.vscode": {
-      "version": "1.2.3",
+      "version": "1.2.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {},

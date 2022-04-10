@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/AppManagement/MasterScene.unity
+    guid: 78bcb5624d745e64990057ec7d962be0
+  - enabled: 1
     path: Assets/MapEditor/Editor.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Home/Home.unity
+    guid: 40763b731a6d80542858eab725b4558e
+  - enabled: 1
+    path: Assets/MapViewer/Viewer.unity
+    guid: 3c37e20ab66a611459ab0ea6a7fc8d76
   m_configObjects: {}

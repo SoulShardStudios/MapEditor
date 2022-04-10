@@ -442,16 +442,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 323760064}
-  - component: {fileID: 323760065}
   - component: {fileID: 323760067}
   - component: {fileID: 323760066}
+  - component: {fileID: 323760065}
   m_Layer: 5
-  m_Name: DeleteWorkspacePromt
+  m_Name: DeleteMapPromt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &323760064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -463,8 +463,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 516100236}
   - {fileID: 1163733604}
+  - {fileID: 516100236}
   - {fileID: 1593152937}
   m_Father: {fileID: 1493057832}
   m_RootOrder: 4
@@ -483,11 +483,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 323760063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cecf47bfcfe52140b0994912eefa593, type: 3}
+  m_Script: {fileID: 11500000, guid: 0724c626e3e64944a948836ac5a7a491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 0}
-  parent: {fileID: 1493057833}
+  mapBrowser: {fileID: 1493057833}
+  current: 
 --- !u!114 &323760066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,7 +558,7 @@ RectTransform:
   m_Children:
   - {fileID: 1061388350}
   m_Father: {fileID: 323760064}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -647,10 +647,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 323760065}
-        m_TargetAssemblyTypeName: AddWorkspacePromt, Assembly-CSharp
-        m_MethodName: Submit
-        m_Mode: 1
+      - m_Target: {fileID: 323760063}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -659,10 +659,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 323760063}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 323760065}
+        m_TargetAssemblyTypeName: DeleteMapPrompt, Assembly-CSharp
+        m_MethodName: Delete
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1061,7 +1061,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2027065872}
-        m_TargetAssemblyTypeName: AddWorkspacePromt, Assembly-CSharp
+        m_TargetAssemblyTypeName: AddMapPrompt, Assembly-CSharp
         m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 50
   m_Viewport: {fileID: 673365225}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -1571,7 +1571,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 323760064}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1925,7 +1925,7 @@ GameObject:
   - component: {fileID: 1493057833}
   - component: {fileID: 1493057834}
   m_Layer: 5
-  m_Name: SelectWorkspace
+  m_Name: MapBrowser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1969,6 +1969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapSelection: {fileID: 6474044826727947994, guid: 9fdea23418b3b654da0e45c127a5fd1b, type: 3}
   mapSelectionParent: {fileID: 1632575513}
+  deletePrompt: {fileID: 323760065}
 --- !u!114 &1493057834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2757,18 +2758,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1493057833}
-        m_TargetAssemblyTypeName: SelectWorkspace, Assembly-CSharp
-        m_MethodName: NewWorkspace
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2027065870}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -2846,7 +2835,7 @@ GameObject:
   - component: {fileID: 2027065874}
   - component: {fileID: 2027065873}
   m_Layer: 5
-  m_Name: WorkspaceNamePrompt
+  m_Name: AddMapPrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
